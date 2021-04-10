@@ -161,7 +161,7 @@ Dashboard
       error:function(data) {
         $.LoadingOverlay("hide");
         var resp = "Network error";
-        if (data.status == 412) {
+        if (data.status == 422) {
           resp = data.responseJSON.msg;
         }
         $.toast({

@@ -37,6 +37,6 @@ class DeleteProductRequest extends FormRequest
     protected function failedValidation(Validator $validator)
     {
 
-        throw new HttpResponseException(response()->json(['code'=>412,'status'=>'failed','msg'=>$validator->errors()->first()], 412));
+        throw new HttpResponseException(response()->json(['code'=>422,'status'=>'failed','msg'=>$validator->errors()->first()], 422));
     }
 }

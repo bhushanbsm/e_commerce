@@ -138,7 +138,7 @@
           error:function(data) {
             $.LoadingOverlay("hide");
             
-            if (data.status == 412) {
+            if (data.status == 422) {
               $.toast({
                 heading: 'Registration',
                 text: data.responseJSON.msg,

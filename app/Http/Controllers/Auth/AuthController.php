@@ -28,11 +28,11 @@ class AuthController extends Controller
         if (!$user) {
             return response(
                 [
-                    "code" => "412",
+                    "code" => "422",
                     "status" => "failed",
                     "msg" => 'Unable to register user.'
                 ],
-                412
+                422
             );
         }
 
@@ -64,11 +64,11 @@ class AuthController extends Controller
         }
         return response(
             [
-                "code" => "412",
+                "code" => "422",
                 "status" => "failed",
                 "msg" => 'User credentials does not match.'
             ],
-            412
+            422
         );
     }
 
