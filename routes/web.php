@@ -18,6 +18,10 @@ Route::group(['middleware' => 'guest'], function () {
 
     Route::get('/register', 'App\Http\Controllers\Auth\AuthController@register')->name('register');
     Route::post('/register', 'App\Http\Controllers\Auth\AuthController@storeUser');
+
+    Route::get('auth/google', [App\Http\Controllers\Auth\GoogleSocialiteController::class, 'redirectToGoogle']);
+    Route::get('callback/google', [App\Http\Controllers\Auth\GoogleSocialiteController::class, 'handleCallback']);
+
 });
 
 Route::group(['middleware' => 'auth'],function(){
